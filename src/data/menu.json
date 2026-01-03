@@ -4,7 +4,7 @@
     "cafe_details": {
       "name": "Sish Terrace",
       "location": "Resto & Cafe",
-      "logo": "/sish.jpg"
+      "logo": "/cafe.jpg"
     },
     "categories": ["All", "Bestsellers", "Pizza", "Coffee", "Desserts", "Wraps"],
     "items": [
