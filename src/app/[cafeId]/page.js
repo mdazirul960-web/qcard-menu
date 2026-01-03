@@ -124,17 +124,34 @@ export default function CafeMenu() {
   return (
     <div className="bg-gray-50 min-h-screen font-sans pb-24">
       
-      {/* 1. HEADER & SEARCH */}
+     {/* 1. HEADER & SEARCH */}
       <div className="bg-white sticky top-0 z-50 shadow-sm pb-2">
         <div className="flex items-center justify-between px-4 pt-4 mb-3">
-           <img src="/logo.png" alt="QCard" className="h-9 w-auto object-contain" />
-           <div className="text-right">
-              <div className="flex items-center justify-end gap-1 text-gray-900 font-bold text-lg leading-none">
-                {currentCafeData.cafe_details.name}
+           
+           {/* LEFT: YOUR QCard Logo */}
+           <img src="/logo.png" alt="QCard" className="h-8 w-auto object-contain" />
+
+           {/* RIGHT: Client Name + Client Logo */}
+           <div className="flex items-center gap-3">
+              <div className="text-right">
+                <div className="text-gray-900 font-bold text-lg leading-none">
+                  {currentCafeData.cafe_details.name}
+                </div>
+                <p className="text-xs font-medium text-gray-500 mt-0.5">{currentCafeData.cafe_details.location}</p>
               </div>
-              <p className="text-xs font-medium text-gray-500 mt-0.5">{currentCafeData.cafe_details.location}</p>
+              
+              {/* The Client Logo (Only shows if they have one) */}
+              {currentCafeData.cafe_details.logo && (
+                <img 
+                  src={currentCafeData.cafe_details.logo} 
+                  alt="Cafe Logo" 
+                  className="h-12 w-12 rounded-full object-cover border border-gray-100 shadow-sm"
+                />
+              )}
            </div>
         </div>
+        
+        {/* Search Bar Section */}
         <div className="px-4">
           <div className="relative shadow-sm">
             <input 
