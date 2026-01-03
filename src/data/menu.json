@@ -1,4 +1,43 @@
-{
+
+  {
+    "sish": {
+    "cafe_details": {
+      "name": "Sish Terrace",
+      "location": "Resto & Cafe",
+      "logo": "/sish.jpg"
+    },
+    "categories": ["All", "Specialty", "Coffee", "Snacks", "Mains"],
+    "items": [
+      {
+        "type": "ad_banner",
+        "id": "ad_sish",
+        "ad_image_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+        "advertiser": "Sish Terrace Special"
+      },
+      {
+        "type": "item",
+        "id": 501,
+        "name": "Sish Special Platter",
+        "description": "Our signature assortment of kebabs and dips.",
+        "price": 550,
+        "is_veg": false,
+        "rating": 5.0,
+        "images": ["https://images.unsplash.com/photo-1544025162-d76690b67f11?w=500&q=80"],
+        "tags": ["Specialty", "Bestseller"]
+      },
+      {
+        "type": "item",
+        "id": 502,
+        "name": "Terrace Cold Coffee",
+        "description": "Thick creamy coffee topped with chocolate chips.",
+        "price": 180,
+        "is_veg": true,
+        "rating": 4.8,
+        "images": ["https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&q=80"],
+        "tags": ["Coffee"]
+      }
+    ]
+  },
   "urban": {
     "cafe_details": {
       "name": "The Urban Roastery",
