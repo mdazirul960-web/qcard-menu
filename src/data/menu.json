@@ -6,35 +6,74 @@
       "location": "Resto & Cafe",
       "logo": "/sish.jpg"
     },
-    "categories": ["All", "Specialty", "Coffee", "Snacks", "Mains"],
+    "categories": ["All", "Bestsellers", "Pizza", "Coffee", "Desserts", "Wraps"],
     "items": [
       {
-        "type": "ad_banner",
-        "id": "ad_sish",
-        "ad_image_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-        "advertiser": "Sish Terrace Special"
-      },
-      {
         "type": "item",
-        "id": 501,
-        "name": "Sish Special Platter",
-        "description": "Our signature assortment of kebabs and dips.",
-        "price": 550,
+        "id": 101,
+        "name": "Tandoori Chicken Pizza",
+        "description": "Wood-fired crust topped with spicy tandoori chunks and onions.",
+        "price": 428,
         "is_veg": false,
-        "rating": 5.0,
-        "images": ["https://images.unsplash.com/photo-1544025162-d76690b67f11?w=500&q=80"],
-        "tags": ["Specialty", "Bestseller"]
+        "rating": 4.5,
+        "votes": 120,
+        "images": [
+          "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80",
+          "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80",
+          "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80"
+        ],
+        "tags": ["Bestseller", "Pizza"]
       },
       {
         "type": "item",
-        "id": 502,
-        "name": "Terrace Cold Coffee",
-        "description": "Thick creamy coffee topped with chocolate chips.",
-        "price": 180,
+        "id": 102,
+        "name": "Veg Tikka Wrap",
+        "description": "Soft tortilla filled with grilled paneer and mint chutney.",
+        "price": 190,
+        "is_veg": true,
+        "rating": 4.1,
+        "votes": 85,
+        "images": [
+          "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=500&q=80",
+          "https://images.unsplash.com/photo-1541529086526-db283c563270?w=500&q=80"
+        ],
+        "tags": ["Wraps"]
+      },
+      {
+        "type": "ad_banner",
+        "id": "ad_01",
+        "ad_image_url": "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=800&q=80",
+        "advertiser": "Coca Cola"
+      },
+      {
+        "type": "item",
+        "id": 103,
+        "name": "Cappuccino",
+        "description": "Freshly brewed espresso with steamed milk foam.",
+        "price": 120,
         "is_veg": true,
         "rating": 4.8,
-        "images": ["https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&q=80"],
-        "tags": ["Coffee"]
+        "votes": 300,
+        "images": [
+          "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&q=80",
+          "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80"
+        ],
+        "tags": ["Coffee", "Bestseller"]
+      },
+      {
+        "type": "item",
+        "id": 104,
+        "name": "Chocolate Brownie",
+        "description": "Gooey chocolate brownie served with vanilla ice cream.",
+        "price": 150,
+        "is_veg": true,
+        "rating": 4.6,
+        "votes": 210,
+        "images": [
+          "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80",
+          "https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=500&q=80"
+        ],
+        "tags": ["Desserts"]
       }
     ]
   },
