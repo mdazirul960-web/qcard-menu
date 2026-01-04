@@ -6,24 +6,12 @@
     },
    "hero_slides": [
       {
-        "id": 1,
-        "title1": "", 
-        "title2": "",
-        "desc": "",
-        "code": "",
-        "bg": "", 
-        "img": "/sish/offer1.jpg", 
-        "btnColor": ""
+        "id": 1, 
+        "img": "/sish/offer1.jpg"
       },
       {
         "id": 2,
-        "title1": "", 
-        "title2": "",
-        "desc": "",
-        "code": "",
-        "bg": "", 
-        "img": "/sish/offer2.jpg", 
-        "btnColor": ""
+        "img": "/sish/offer2.jpg"
       }
     ],
     "categories": ["All", "Bestsellers", "Pizza", "Coffee", "Desserts", "Wraps"],
