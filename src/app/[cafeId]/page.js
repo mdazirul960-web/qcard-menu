@@ -100,16 +100,20 @@ export default function CafeMenu() {
         </div>
       </div>
 
-      {/* 2. HERO SECTION (SMART MODE) */}
+      {/* 2. HERO SECTION (SUPER SMART MODE - FULL WIDTH FIX) */}
       {heroSlides.length > 0 && (
-        <div className="pt-4 pb-2 relative">
-          <div className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-4 px-4 pb-4" onScroll={handleHeroScroll}>
+        <div className="pt-4 pb-0 relative">
+          {/* Removed px-4 and gap-4 from container to allow full width */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-0 px-0" onScroll={handleHeroScroll}>
             {heroSlides.map((slide) => {
               // INTELLIGENCE: If title is missing, assume it's a Designer Banner
               const isDesignerMode = !slide.title1 || slide.title1 === "";
 
               return (
-                <div key={slide.id} className={`flex-shrink-0 w-full relative h-48 rounded-2xl overflow-hidden shadow-lg snap-center ${isDesignerMode ? 'bg-transparent' : slide.bg}`}>
+                // INTELLIGENT CONTAINER Style:
+                // If Designer Mode: rounded-none, shadow-none, no margins (FULL BLEED)
+                // If Auto Mode: rounded-2xl, shadow-lg, mx-4 (add margin back to center it)
+                <div key={slide.id} className={`flex-shrink-0 w-full relative h-56 overflow-hidden snap-center ${isDesignerMode ? 'rounded-none shadow-none bg-transparent' : 'rounded-2xl shadow-lg mx-4 ' + slide.bg}`}>
                    
                    {/* OPTION A: AUTO MODE (Text + Buttons) */}
                    {!isDesignerMode && (
@@ -137,7 +141,7 @@ export default function CafeMenu() {
             })}
           </div>
           {/* DOTS */}
-          <div className="flex justify-center gap-1.5 absolute bottom-6 left-0 right-0 z-20 pointer-events-none">
+          <div className="flex justify-center gap-1.5 absolute bottom-4 left-0 right-0 z-20 pointer-events-none">
             {heroSlides.map((_, i) => (
               <div key={i} className={`h-1.5 rounded-full shadow-sm transition-all duration-300 ${currentHeroIndex === i ? 'w-4 bg-white' : 'w-1.5 bg-white/50'}`}></div>
             ))}
@@ -145,9 +149,8 @@ export default function CafeMenu() {
         </div>
       )}
 
-      {/* 3. CATEGORIES & 4. FILTERS & 5. FEED (Same as before) */}
-      {/* (Shortened for brevity - the rest of the code is unchanged logic) */}
-      <div className="sticky top-[112px] z-40 bg-white shadow-sm">
+      {/* 3. CATEGORIES (Added top margin to separate from full-width banner) */}
+      <div className="sticky top-[112px] z-40 bg-white shadow-sm mt-4">
         <div className="flex gap-4 px-4 py-4 overflow-x-auto no-scrollbar">
           {currentCafeData.categories.map((cat, i) => (
             <button key={i} onClick={() => setActiveCategory(cat)} className="flex flex-col items-center gap-2 min-w-[64px]">
@@ -159,6 +162,9 @@ export default function CafeMenu() {
           ))}
         </div>
       </div>
+
+      {/* 4. FILTERS & 5. FEED (Same as before) */}
+      {/* (Shortened for brevity - the rest of the code is unchanged logic) */}
       <div className="flex gap-3 px-4 mb-4 mt-2 overflow-x-auto no-scrollbar">
         <button onClick={() => setFilterVeg(!filterVeg)} className={`border rounded-lg px-3 py-1.5 text-xs font-bold whitespace-nowrap shadow-sm transition-all ${filterVeg ? 'bg-qcard-purple text-white border-qcard-purple' : 'bg-white text-gray-700 border-gray-300'}`}>{filterVeg ? '✓ Pure Veg' : 'Veg'}</button>
         <button onClick={() => setFilterPrice(!filterPrice)} className={`border rounded-lg px-3 py-1.5 text-xs font-bold whitespace-nowrap shadow-sm transition-all ${filterPrice ? 'bg-qcard-purple text-white border-qcard-purple' : 'bg-white text-gray-700 border-gray-300'}`}>{filterPrice ? '✓ Under ₹200' : 'Under ₹200'}</button>
