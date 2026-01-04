@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
-import menuData from '../../data/menu.json'; 
+import menuData from '../../data/index';
 
 export default function CafeMenu() {
   const params = useParams();
