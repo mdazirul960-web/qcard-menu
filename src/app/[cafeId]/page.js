@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
-import menuData from '../../data/menu.json'; // Ensure this path is correct
+import menuData from '../../data/menu.json'; 
 
 export default function CafeMenu() {
   const params = useParams();
@@ -84,7 +84,10 @@ export default function CafeMenu() {
       "Wraps": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=150&h=150&fit=crop&q=80",
       "Burgers": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=150&h=150&fit=crop&q=80",
       "Fries": "https://images.unsplash.com/photo-1573080496987-a199f8cd4054?w=150&h=150&fit=crop&q=80",
-      "Drinks": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=150&h=150&fit=crop&q=80"
+      "Drinks": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=150&h=150&fit=crop&q=80",
+      "Specialty": "https://images.unsplash.com/photo-1541529086526-db283c563270?w=150&h=150&fit=crop&q=80",
+      "Snacks": "https://images.unsplash.com/photo-1621939514649-28b12e81658e?w=150&h=150&fit=crop&q=80",
+      "Mains": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=150&h=150&fit=crop&q=80"
     };
     return images[cat] || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=150&h=150&fit=crop";
   };
@@ -124,14 +127,14 @@ export default function CafeMenu() {
   return (
     <div className="bg-gray-50 min-h-screen font-sans pb-24">
       
-    {/* 1. HEADER & SEARCH */}
+      {/* 1. HEADER & SEARCH (NEW BALANCED VERSION) */}
       <div className="bg-white sticky top-0 z-50 shadow-sm pb-2">
         <div className="flex items-center justify-between px-4 pt-4 mb-3">
            
-           {/* LEFT: YOUR QCard Logo (Size h-9) */}
+           {/* LEFT: YOUR QCard Logo */}
            <img src="/logo.png" alt="QCard" className="h-9 w-auto object-contain" />
 
-           {/* RIGHT: Client Name + Client Logo (Size h-9) */}
+           {/* RIGHT: Client Name + Client Logo (Balanced Size) */}
            <div className="flex items-center gap-2">
               <div className="text-right">
                 <h1 className="text-gray-900 font-extrabold text-sm leading-none tracking-tight">
@@ -142,7 +145,7 @@ export default function CafeMenu() {
                 </p>
               </div>
               
-              {/* Client Logo - NOW MATCHES LEFT SIZE (h-9) */}
+              {/* Client Logo - Matches QCard Size (h-9) */}
               {currentCafeData.cafe_details.logo && (
                 <img 
                   src={currentCafeData.cafe_details.logo} 
@@ -152,23 +155,6 @@ export default function CafeMenu() {
               )}
            </div>
         </div>
-        
-        {/* Search Bar Section */}
-        <div className="px-4">
-          <div className="relative shadow-sm">
-            <input 
-              type="text" 
-              placeholder="Search..." 
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-gray-200 rounded-xl py-3 pl-10 pr-10 text-sm text-gray-700 focus:outline-none focus:border-qcard-purple focus:ring-1 focus:ring-qcard-purple transition-all shadow-sm placeholder-gray-400"
-            />
-             <svg className="absolute left-3 top-3.5 w-5 h-5 text-qcard-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
         
         {/* Search Bar Section */}
         <div className="px-4">
