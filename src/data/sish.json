@@ -14,9 +14,9 @@
         "img": "/sish/offer2.jpg"
       }
     ],
-    "category": ["All", "Bestsellers", "Pizza", "Coffee", "Desserts", "Wraps"],
+    "categories": ["All", "Bestsellers", "Pizza", "Coffee", "Desserts", "Wraps"],
 
-    "category_image": {
+    "category_images": {
       "All": "/sish/all-icon.jpg",
       "Bestseller": "/sish/bestseller-icon.jpg",
       "Pizza": "/sish/pizza-icon.jpg",
