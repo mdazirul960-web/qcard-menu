@@ -6,26 +6,26 @@
       "location": "Resto & Cafe",
       "logo": "/cafe.jpg"
     },
-    "hero_slides": [
+   "hero_slides": [
       {
         "id": 1,
-        "bg": "bg-gradient-to-br from-orange-500 via-orange-400 to-yellow-400",
-        "title1": "FLAT",
-        "title2": "50% OFF",
-        "desc": "ON YOUR FIRST ORDER",
-        "code": "QCARD50",
-        "btnColor": "bg-black text-white",
-        "img": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&q=80"
+        "title1": "", 
+        "title2": "",
+        "desc": "",
+        "code": "",
+        "bg": "", 
+        "img": "/offer1.jpg", 
+        "btnColor": ""
       },
       {
         "id": 2,
-        "bg": "bg-gradient-to-br from-purple-700 via-purple-600 to-indigo-600",
-        "title1": "FREE",
-        "title2": "DELIVERY",
-        "desc": "ON ORDERS ABOVE ₹499",
-        "code": "FREEDEL",
-        "btnColor": "bg-white text-purple-700",
-        "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80"
+        "title1": "", 
+        "title2": "",
+        "desc": "",
+        "code": "",
+        "bg": "", 
+        "img": "/offer2.jpg", 
+        "btnColor": ""
       }
     ],
     "categories": ["All", "Bestsellers", "Pizza", "Coffee", "Desserts", "Wraps"],
