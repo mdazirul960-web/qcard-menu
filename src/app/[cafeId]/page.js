@@ -31,39 +31,9 @@ export default function CafeMenu() {
   const [filterPrice, setFilterPrice] = useState(false);
   const [filterRating, setFilterRating] = useState(false);
 
-  // --- HERO SLIDES DATA ---
-  const heroSlides = [
-    {
-      id: 1,
-      bg: "bg-gradient-to-br from-orange-500 via-orange-400 to-yellow-400",
-      title1: "FLAT",
-      title2: "50% OFF",
-      desc: "ON YOUR FIRST ORDER",
-      code: "QCARD50",
-      btnColor: "bg-black",
-      img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&q=80"
-    },
-    {
-      id: 2,
-      bg: "bg-gradient-to-br from-purple-700 via-purple-600 to-indigo-600",
-      title1: "FREE",
-      title2: "DELIVERY",
-      desc: "ON ORDERS ABOVE ₹499",
-      code: "FREEDEL",
-      btnColor: "bg-white text-purple-700",
-      img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80"
-    },
-    {
-      id: 3,
-      bg: "bg-gradient-to-br from-emerald-600 via-green-500 to-teal-400",
-      title1: "BUY 1",
-      title2: "GET 1 FREE",
-      desc: "ON ALL COFFEES",
-      code: "COFFEELOVE",
-      btnColor: "bg-white text-green-700",
-      img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&q=80"
-    }
-  ];
+  // --- DYNAMIC DATA LOADING ---
+  // Now we read slides from JSON. If none exist, we default to an empty list.
+  const heroSlides = currentCafeData.hero_slides || [];
 
   // --- LOGIC: Track Hero Scroll ---
   const handleHeroScroll = (e) => {
@@ -127,14 +97,10 @@ export default function CafeMenu() {
   return (
     <div className="bg-gray-50 min-h-screen font-sans pb-24">
       
-      {/* 1. HEADER & SEARCH (NEW BALANCED VERSION) */}
+      {/* 1. HEADER */}
       <div className="bg-white sticky top-0 z-50 shadow-sm pb-2">
         <div className="flex items-center justify-between px-4 pt-4 mb-3">
-           
-           {/* LEFT: YOUR QCard Logo */}
            <img src="/logo.png" alt="QCard" className="h-9 w-auto object-contain" />
-
-           {/* RIGHT: Client Name + Client Logo (Balanced Size) */}
            <div className="flex items-center gap-2">
               <div className="text-right">
                 <h1 className="text-gray-900 font-extrabold text-sm leading-none tracking-tight">
@@ -144,8 +110,6 @@ export default function CafeMenu() {
                   {currentCafeData.cafe_details.location}
                 </p>
               </div>
-              
-              {/* Client Logo - Matches QCard Size (h-9) */}
               {currentCafeData.cafe_details.logo && (
                 <img 
                   src={currentCafeData.cafe_details.logo} 
@@ -156,7 +120,6 @@ export default function CafeMenu() {
            </div>
         </div>
         
-        {/* Search Bar Section */}
         <div className="px-4">
           <div className="relative shadow-sm">
             <input 
@@ -173,37 +136,39 @@ export default function CafeMenu() {
         </div>
       </div>
 
-      {/* 2. HERO SECTION (SWIPEABLE) */}
-      <div className="pt-4 pb-2 relative">
-        <div 
-          className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-4 px-4 pb-4"
-          onScroll={handleHeroScroll}
-        >
-          {heroSlides.map((slide) => (
-            <div key={slide.id} className={`flex-shrink-0 w-full relative h-48 rounded-2xl overflow-hidden shadow-lg snap-center ${slide.bg}`}>
-               <div className="absolute top-6 left-5 z-10">
-                 <h2 className="text-white font-black text-3xl italic leading-none drop-shadow-md">{slide.title1}</h2>
-                 <h2 className="text-white font-black text-4xl italic leading-none mb-1 drop-shadow-md">{slide.title2}</h2>
-                 <p className="text-white/90 text-[10px] font-medium tracking-wider mb-3">{slide.desc}</p>
-                 <button className={`${slide.btnColor || 'bg-black'} ${slide.id === 2 || slide.id === 3 ? 'text-gray-900' : 'text-white'} text-xs font-bold px-4 py-2 rounded-full flex items-center gap-1 shadow-sm`}>
-                   Use: {slide.code} <span className="text-xs">›</span>
-                 </button>
-               </div>
-               <img 
-                 src={slide.img} 
-                 className="absolute -right-6 bottom-[-20px] w-48 h-48 object-contain drop-shadow-2xl transform rotate-[-10deg]"
-                 alt="Hero"
-               />
-            </div>
-          ))}
+      {/* 2. HERO SECTION (Dynamic from JSON) */}
+      {heroSlides.length > 0 && (
+        <div className="pt-4 pb-2 relative">
+          <div 
+            className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-4 px-4 pb-4"
+            onScroll={handleHeroScroll}
+          >
+            {heroSlides.map((slide) => (
+              <div key={slide.id} className={`flex-shrink-0 w-full relative h-48 rounded-2xl overflow-hidden shadow-lg snap-center ${slide.bg}`}>
+                 <div className="absolute top-6 left-5 z-10">
+                   <h2 className="text-white font-black text-3xl italic leading-none drop-shadow-md">{slide.title1}</h2>
+                   <h2 className="text-white font-black text-4xl italic leading-none mb-1 drop-shadow-md">{slide.title2}</h2>
+                   <p className="text-white/90 text-[10px] font-medium tracking-wider mb-3">{slide.desc}</p>
+                   <button className={`${slide.btnColor} text-xs font-bold px-4 py-2 rounded-full flex items-center gap-1 shadow-sm`}>
+                     Use: {slide.code} <span className="text-xs">›</span>
+                   </button>
+                 </div>
+                 <img 
+                   src={slide.img} 
+                   className="absolute -right-6 bottom-[-20px] w-48 h-48 object-contain drop-shadow-2xl transform rotate-[-10deg]"
+                   alt="Hero"
+                 />
+              </div>
+            ))}
+          </div>
+          {/* HERO DOTS */}
+          <div className="flex justify-center gap-1.5 absolute bottom-6 left-0 right-0 z-20 pointer-events-none">
+            {heroSlides.map((_, i) => (
+              <div key={i} className={`h-1.5 rounded-full shadow-sm transition-all duration-300 ${currentHeroIndex === i ? 'w-4 bg-white' : 'w-1.5 bg-white/50'}`}></div>
+            ))}
+          </div>
         </div>
-        {/* HERO DOTS */}
-        <div className="flex justify-center gap-1.5 absolute bottom-6 left-0 right-0 z-20 pointer-events-none">
-          {heroSlides.map((_, i) => (
-            <div key={i} className={`h-1.5 rounded-full shadow-sm transition-all duration-300 ${currentHeroIndex === i ? 'w-4 bg-white' : 'w-1.5 bg-white/50'}`}></div>
-          ))}
-        </div>
-      </div>
+      )}
 
       {/* 3. CATEGORIES */}
       <div className="sticky top-[112px] z-40 bg-white shadow-sm">
@@ -234,10 +199,9 @@ export default function CafeMenu() {
         <button onClick={() => setFilterRating(!filterRating)} className={`border rounded-lg px-3 py-1.5 text-xs font-bold whitespace-nowrap shadow-sm transition-all ${filterRating ? 'bg-qcard-purple text-white border-qcard-purple' : 'bg-white text-gray-700 border-gray-300'}`}>{filterRating ? '✓ Rating 4.0+' : 'Rating 4.0+'}</button>
       </div>
 
-      {/* 5. FEED (With Carousel & Ads) */}
+      {/* 5. FEED */}
       <div className="px-3 space-y-5 max-w-md mx-auto mt-2">
         {finalDisplayList.map((item, index) => {
-          
           if (item.type === 'ad_banner') {
             return (
               <div key={index + 'ad'} className="w-full rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white my-8">
@@ -255,18 +219,14 @@ export default function CafeMenu() {
 
           return (
             <div key={item.id} className="bg-white rounded-3xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-gray-100 relative">
-              
-              {/* IMAGE CAROUSEL */}
               <div className="relative h-56 w-full bg-gray-100 group">
                  <div className="flex overflow-x-auto h-full w-full snap-x snap-mandatory no-scrollbar z-0 relative">
-                    {/* Handle potential single image string vs array */}
                     {Array.isArray(item.images) ? item.images.map((imgSrc, imgIndex) => (
                       <img key={imgIndex} src={imgSrc} alt={`${item.name} ${imgIndex}`} className="w-full h-full object-cover flex-shrink-0 snap-center" />
                     )) : (
                       <img src={item.images} alt={item.name} className="w-full h-full object-cover flex-shrink-0 snap-center" />
                     )}
                  </div>
-                 {/* DOTS */}
                  {Array.isArray(item.images) && item.images.length > 1 && (
                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1 z-20">
                      {item.images.map((_, dotIndex) => (
@@ -274,7 +234,6 @@ export default function CafeMenu() {
                      ))}
                    </div>
                  )}
-                 {/* Overlays */}
                  <div className="absolute bottom-3 right-3 bg-green-700 text-white text-xs font-bold px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm z-10">{item.rating} <span className="text-[10px]">★</span></div>
                  {item.tags?.includes('Bestseller') && (<div className="absolute bottom-3 left-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-r-lg shadow-sm z-10">FLAT 20% OFF</div>)}
                   <div className="absolute top-3 right-3 bg-white p-1 rounded-md shadow-sm z-10">
@@ -283,8 +242,6 @@ export default function CafeMenu() {
                     </div>
                   </div>
               </div>
-
-              {/* Content */}
               <div className="p-4">
                 <div className="flex justify-between items-start mb-1">
                   <h3 className="font-extrabold text-xl text-gray-900 leading-tight">{item.name}</h3>
