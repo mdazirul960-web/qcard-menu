@@ -124,32 +124,51 @@ export default function CafeMenu() {
   return (
     <div className="bg-gray-50 min-h-screen font-sans pb-24">
       
-     {/* 1. HEADER & SEARCH */}
+    {/* 1. HEADER & SEARCH */}
       <div className="bg-white sticky top-0 z-50 shadow-sm pb-2">
         <div className="flex items-center justify-between px-4 pt-4 mb-3">
            
-           {/* LEFT: YOUR QCard Logo */}
-           <img src="/logo.png" alt="QCard" className="h-8 w-auto object-contain" />
+           {/* LEFT: YOUR QCard Logo (Size h-9) */}
+           <img src="/logo.png" alt="QCard" className="h-9 w-auto object-contain" />
 
-           {/* RIGHT: Client Name + Client Logo */}
-           <div className="flex items-center gap-3">
+           {/* RIGHT: Client Name + Client Logo (Size h-9) */}
+           <div className="flex items-center gap-2">
               <div className="text-right">
-                <div className="text-gray-900 font-bold text-lg leading-none">
+                <h1 className="text-gray-900 font-extrabold text-sm leading-none tracking-tight">
                   {currentCafeData.cafe_details.name}
-                </div>
-                <p className="text-xs font-medium text-gray-500 mt-0.5">{currentCafeData.cafe_details.location}</p>
+                </h1>
+                <p className="text-[10px] font-bold text-gray-400 mt-0.5 tracking-wide uppercase">
+                  {currentCafeData.cafe_details.location}
+                </p>
               </div>
               
-              {/* The Client Logo (Only shows if they have one) */}
+              {/* Client Logo - NOW MATCHES LEFT SIZE (h-9) */}
               {currentCafeData.cafe_details.logo && (
                 <img 
                   src={currentCafeData.cafe_details.logo} 
                   alt="Cafe Logo" 
-                  className="h-12 w-12 rounded-full object-cover border border-gray-100 shadow-sm"
+                  className="h-9 w-9 rounded-full object-cover border border-gray-100 shadow-sm"
                 />
               )}
            </div>
         </div>
+        
+        {/* Search Bar Section */}
+        <div className="px-4">
+          <div className="relative shadow-sm">
+            <input 
+              type="text" 
+              placeholder="Search..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-white border border-gray-200 rounded-xl py-3 pl-10 pr-10 text-sm text-gray-700 focus:outline-none focus:border-qcard-purple focus:ring-1 focus:ring-qcard-purple transition-all shadow-sm placeholder-gray-400"
+            />
+             <svg className="absolute left-3 top-3.5 w-5 h-5 text-qcard-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
         
         {/* Search Bar Section */}
         <div className="px-4">
