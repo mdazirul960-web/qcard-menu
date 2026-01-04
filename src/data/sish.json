@@ -15,6 +15,15 @@
       }
     ],
     "categories": ["All", "Bestsellers", "Pizza", "Coffee", "Desserts", "Wraps"],
+
+    "categories_image": {
+      "All": "/sish/all-icon.jpg",
+      "Bestseller": "/sish/bestseller-icon.jpg",
+      "Pizza": "/sish/pizza-icon.jpg",
+      "Coffee": "/sish/coffee-icon.jpg",
+      "Desserts": "/sish/desserts-icon.jpg",
+      "Wraps": "/sish/wraps-icon.jpg"
+    },
     "items": [
       {
         "type": "item",
@@ -22,6 +31,7 @@
         "name": "Tandoori Chicken Pizza",
         "description": "Wood-fired crust topped with spicy tandoori chunks and onions.",
         "price": 500,
+        "discount": "FLAT 40% OFF",
         "is_veg": false,
         "rating": 4.5,
         "votes": 120,
@@ -30,7 +40,7 @@
           "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80",
           "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80"
         ],
-        "tags": ["Bestseller", "Pizza"]
+        "tags": ["Pizza"]
       },
       {
         "type": "item",

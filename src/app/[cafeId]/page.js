@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
-import menuData from '../../data/index';
+import menuData from '../../data/index'; 
 
 export default function CafeMenu() {
   const params = useParams();
@@ -36,22 +36,21 @@ export default function CafeMenu() {
     setCurrentHeroIndex(index);
   };
 
-  // --- IMAGES ---
+  // --- SMART IMAGES (JSON FIRST) ---
   const getCategoryImage = (cat) => {
-    const images = {
+    // 1. Check if YOUR JSON has a custom image for this category
+    if (currentCafeData.category_images && currentCafeData.category_images[cat]) {
+      return currentCafeData.category_images[cat];
+    }
+
+    // 2. Fallback Defaults (Only used if you don't provide an image in JSON)
+    const defaults = {
       "All": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=150&h=150&fit=crop&q=80",
       "Bestsellers": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=150&h=150&fit=crop&q=80",
       "Pizza": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=150&h=150&fit=crop&q=80",
       "Coffee": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=150&h=150&fit=crop&q=80",
-      "Desserts": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=150&h=150&fit=crop&q=80", 
-      "Wraps": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=150&h=150&fit=crop&q=80",
-      "Burgers": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=150&h=150&fit=crop&q=80",
-      "Fries": "https://images.unsplash.com/photo-1573080496987-a199f8cd4054?w=150&h=150&fit=crop&q=80",
-      "Drinks": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=150&h=150&fit=crop&q=80",
-      "Snacks": "https://images.unsplash.com/photo-1621939514649-28b12e81658e?w=150&h=150&fit=crop&q=80",
-      "Mains": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=150&h=150&fit=crop&q=80"
     };
-    return images[cat] || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=150&h=150&fit=crop";
+    return defaults[cat] || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=150&h=150&fit=crop";
   };
 
   // --- FILTERING ---
@@ -100,20 +99,14 @@ export default function CafeMenu() {
         </div>
       </div>
 
-      {/* 2. HERO SECTION (RESTORED ROUNDED CORNERS) */}
+      {/* 2. HERO SECTION */}
       {heroSlides.length > 0 && (
         <div className="pt-4 pb-2 relative">
-          {/* Added gap-4 and px-4 back for proper spacing */}
           <div className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-4 px-4 pb-4" onScroll={handleHeroScroll}>
             {heroSlides.map((slide) => {
-              // INTELLIGENCE: If title is missing, assume it's a Designer Banner
               const isDesignerMode = !slide.title1 || slide.title1 === "";
-
               return (
-                // ALWAYS rounded-2xl, ALWAYS shadow-lg. Background changes based on mode.
                 <div key={slide.id} className={`flex-shrink-0 w-full relative h-48 rounded-2xl overflow-hidden shadow-lg snap-center ${isDesignerMode ? 'bg-transparent' : slide.bg}`}>
-                   
-                   {/* OPTION A: AUTO MODE (Text + Buttons) */}
                    {!isDesignerMode && (
                      <div className="absolute top-6 left-5 z-10">
                        <h2 className="text-white font-black text-3xl italic leading-none drop-shadow-md">{slide.title1}</h2>
@@ -124,21 +117,11 @@ export default function CafeMenu() {
                        </button>
                      </div>
                    )}
-
-                   {/* OPTION B: IMAGE (Adapts to Mode) */}
-                   <img 
-                     src={slide.img} 
-                     className={isDesignerMode 
-                        ? "w-full h-full object-cover" // Designer: Fill the rounded box perfectly
-                        : "absolute -right-6 bottom-[-20px] w-48 h-48 object-contain drop-shadow-2xl transform rotate-[-10deg]" // Auto: Pop-out style
-                     }
-                     alt="Hero"
-                   />
+                   <img src={slide.img} className={isDesignerMode ? "w-full h-full object-cover" : "absolute -right-6 bottom-[-20px] w-48 h-48 object-contain drop-shadow-2xl transform rotate-[-10deg]"} alt="Hero" />
                 </div>
               );
             })}
           </div>
-          {/* DOTS */}
           <div className="flex justify-center gap-1.5 absolute bottom-6 left-0 right-0 z-20 pointer-events-none">
             {heroSlides.map((_, i) => (
               <div key={i} className={`h-1.5 rounded-full shadow-sm transition-all duration-300 ${currentHeroIndex === i ? 'w-4 bg-white' : 'w-1.5 bg-white/50'}`}></div>
@@ -147,7 +130,7 @@ export default function CafeMenu() {
         </div>
       )}
 
-      {/* 3. CATEGORIES */}
+      {/* 3. CATEGORIES (DYNAMIC) */}
       <div className="sticky top-[112px] z-40 bg-white shadow-sm">
         <div className="flex gap-4 px-4 py-4 overflow-x-auto no-scrollbar">
           {currentCafeData.categories.map((cat, i) => (
@@ -161,7 +144,7 @@ export default function CafeMenu() {
         </div>
       </div>
 
-      {/* 4. FILTERS & 5. FEED (Same as before) */}
+      {/* 4. FILTERS & 5. FEED (DYNAMIC DISCOUNT) */}
       <div className="flex gap-3 px-4 mb-4 mt-2 overflow-x-auto no-scrollbar">
         <button onClick={() => setFilterVeg(!filterVeg)} className={`border rounded-lg px-3 py-1.5 text-xs font-bold whitespace-nowrap shadow-sm transition-all ${filterVeg ? 'bg-qcard-purple text-white border-qcard-purple' : 'bg-white text-gray-700 border-gray-300'}`}>{filterVeg ? '✓ Pure Veg' : 'Veg'}</button>
         <button onClick={() => setFilterPrice(!filterPrice)} className={`border rounded-lg px-3 py-1.5 text-xs font-bold whitespace-nowrap shadow-sm transition-all ${filterPrice ? 'bg-qcard-purple text-white border-qcard-purple' : 'bg-white text-gray-700 border-gray-300'}`}>{filterPrice ? '✓ Under ₹200' : 'Under ₹200'}</button>
@@ -177,7 +160,10 @@ export default function CafeMenu() {
                     {Array.isArray(item.images) ? item.images.map((src, i) => <img key={i} src={src} className="w-full h-full object-cover flex-shrink-0 snap-center"/>) : <img src={item.images} className="w-full h-full object-cover flex-shrink-0 snap-center"/>}
                  </div>
                  <div className="absolute bottom-3 right-3 bg-green-700 text-white text-xs font-bold px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm z-10">{item.rating} ★</div>
-                 {item.tags?.includes('Bestseller') && <div className="absolute bottom-3 left-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-r-lg shadow-sm z-10">FLAT 20% OFF</div>}
+                 
+                 {/* DYNAMIC DISCOUNT BADGE */}
+                 {item.discount && <div className="absolute bottom-3 left-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-r-lg shadow-sm z-10">{item.discount}</div>}
+                 
                   <div className="absolute top-3 right-3 bg-white p-1 rounded-md shadow-sm z-10"><div className={`w-3 h-3 border ${item.is_veg?'border-green-600':'border-red-600'} p-[1px] flex justify-center items-center`}><div className={`w-full h-full rounded-full ${item.is_veg?'bg-green-600':'bg-red-600'}`}></div></div></div>
               </div>
               <div className="p-4"><div className="flex justify-between items-start mb-1"><h3 className="font-extrabold text-xl text-gray-900 leading-tight">{item.name}</h3><div className="text-lg font-bold text-gray-900">₹{item.price}</div></div><p className="text-xs text-gray-500 font-medium line-clamp-1 mb-3">{item.description}</p><div className="flex items-center gap-3 border-t border-dashed border-gray-200 pt-3"><div className="flex items-center gap-1"><div className="w-4 h-4 rounded-full bg-purple-100 flex items-center justify-center"><svg className="w-2.5 h-2.5 text-purple-700" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></div><span className="text-[10px] font-bold text-purple-700 uppercase">Best in Class</span></div></div></div>
