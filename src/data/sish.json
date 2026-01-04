@@ -24,6 +24,22 @@
       "Desserts": "/sish/desserts-icon.jpg",
       "Wraps": "/sish/wraps-icon.jpg"
     },
+    "filter_config": {
+    "veg": { 
+      "show": true, 
+      "label": "Pure Veg" 
+    },
+    "price": { 
+      "show": true, 
+      "limit": 500, 
+      "label": "Under ₹500" 
+    },
+    "rating": { 
+      "show": true, 
+      "limit": 4.5, 
+      "label": "Top Rated (4.5+)" 
+    }
+  },
     "items": [
       {
         "type": "item",
