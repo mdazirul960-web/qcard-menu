@@ -44,18 +44,16 @@ export default function CafeMenu() {
     setCurrentHeroIndex(index);
   };
 
-  // --- SMART IMAGES ---
+// --- SMART IMAGES (100% CONTROLLED BY JSON) ---
   const getCategoryImage = (cat) => {
+    // 1. Look for the image in YOUR sish.json file
     if (currentCafeData.category_images && currentCafeData.category_images[cat]) {
       return currentCafeData.category_images[cat];
     }
-    const defaults = {
-      "All": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=150&h=150&fit=crop&q=80",
-      "Bestsellers": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=150&h=150&fit=crop&q=80",
-      "Pizza": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=150&h=150&fit=crop&q=80",
-      "Coffee": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=150&h=150&fit=crop&q=80",
-    };
-    return defaults[cat] || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=150&h=150&fit=crop";
+
+    // 2. If you forgot to add an image in JSON, show a simple grey placeholder
+    // This way, the app won't crash, but you know you need to fix the JSON.
+    return "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=150&h=150&fit=crop";
   };
 
   // --- FILTERING LOGIC ---
