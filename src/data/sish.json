@@ -18,7 +18,7 @@
 
     "category_images": {
       "All": "/sish/all-icon.jpg",
-      "Bestseller": "/sish/bestseller-icon.jpg",
+      "Bestsellers": "/sish/star-icon.jpg",
       "Pizza": "/sish/pizza-icon.jpg",
       "Coffee": "/sish/coffee-icon.jpg",
       "Desserts": "/sish/desserts-icon.jpg",
