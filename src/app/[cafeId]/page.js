@@ -132,11 +132,7 @@ export default function CafeMenu() {
           {currentCafeData.categories.map((cat, i) => (
             <button key={i} onClick={() => setActiveCategory(cat)} className="flex flex-col items-center gap-2 min-w-[64px]">
               <div className={`w-16 h-16 rounded-full p-0.5 border-2 transition-all ${activeCategory === cat ? 'border-qcard-purple shadow-md scale-105' : 'border-transparent shadow-sm'}`}>
-            <img 
-  src={cat === "All" ? "/sish/all-icon.webp" : getCategoryImage(cat)} 
-  alt={cat} 
-  className="w-full h-full object-cover rounded-full"
-/>
+            <img src={getCategoryImage(cat)} alt={cat} className="w-full h-full object-cover rounded-full"/>
               </div>
               <span className={`text-xs font-bold ${activeCategory === cat ? 'text-qcard-purple' : 'text-gray-700'}`}>{cat}</span>
             </button>
