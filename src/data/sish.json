@@ -1,28 +1,28 @@
  {
     "cafe_details": {
-      "name": "Sish Terrace",
+      "name": "Sish Terrace (Updated)",
       "location": "Resto & Cafe",
-      "logo": "/sish/cafe.jpg"
+      "logo": "/sish/cafe.webp"
     },
    "hero_slides": [
       {
         "id": 1, 
-        "img": "/sish/offer1.jpg"
+        "img": "/sish/offer1.webp"
       },
       {
         "id": 2,
-        "img": "/sish/offer2.jpg"
+        "img": "/sish/offer2.webp"
       }
     ],
     "categories": ["All", "Bestsellers", "Pizza", "Coffee", "Desserts", "Wraps"],
 
     "category_images": {
-      "All": "/sish/all-icon.jpg",
-      "Bestsellers": "/sish/star-icon.jpg",
-      "Pizza": "/sish/pizza-icon.jpg",
-      "Coffee": "/sish/coffee-icon.jpg",
-      "Desserts": "/sish/desserts-icon.jpg",
-      "Wraps": "/sish/wraps-icon.jpg"
+      "All": "/sish/all-icon.webp",
+      "Bestsellers": "/sish/star-icon.webp",
+      "Pizza": "/sish/pizza-icon.webp",
+      "Coffee": "/sish/coffee-icon.webp",
+      "Desserts": "/sish/desserts-icon.webp",
+      "Wraps": "/sish/wraps-icon.webp"
     },
     "filter_config": {
     "veg": { 
