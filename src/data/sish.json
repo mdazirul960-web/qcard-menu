@@ -1,97 +1,95 @@
 {
-  "sish": {
-    "cafe_details": {
-      "name": "Sish Terrace (Updated)",
-      "location": "Restro & Cafe",
-      "logo": "/sish/cafe.webp"
+  "cafe_details": {
+    "name": "Sish Terrace (Updated)",
+    "location": "Restro & Cafe",
+    "logo": "/menu/cafe.webp"
+  },
+  "hero_slides": [
+    {
+      "id": 1,
+      "img": "/menu/offer1.webp",
+      "title1": "Taste the",
+      "title2": "Best Momos",
+      "desc": "Starting at just ₹60",
+      "btnColor": "bg-green-600 text-white",
+      "code": "MOMO60",
+      "bg": "bg-orange-500"
     },
-    "hero_slides": [
-      {
-        "id": 1,
-        "img": "/sish/offer1.webp",
-        "title1": "Taste the",
-        "title2": "Best Momos",
-        "desc": "Starting at just ₹60",
-        "btnColor": "bg-green-600 text-white",
-        "code": "MOMO60",
-        "bg": "bg-orange-500"
-      },
-      {
-        "id": 2,
-        "img": "/sish/offer2.webp",
-        "title1": "Spicy",
-        "title2": "Chicken Wings",
-        "desc": "Crispy and delicious",
-        "btnColor": "bg-red-600 text-white",
-        "code": "YUMMY",
-        "bg": "bg-yellow-500"
-      }
-    ],
-    "categories": ["All", "Starters", "Momo", "Noodles", "Fried Rice", "Curries", "Fast Food", "Soups", "Beverages"],
-    "category_images": {
-      "All": "/sish/all-icon.webp",
-      "Starters": "/sish/star-icon.webp",
-      "Momo": "/sish/star-icon.webp",
-      "Noodles": "/sish/wraps-icon.webp",
-      "Fried Rice": "/sish/wraps-icon.webp",
-      "Curries": "/sish/pizza-icon.webp",
-      "Fast Food": "/sish/pizza-icon.webp",
-      "Soups": "/sish/coffee-icon.webp",
-      "Beverages": "/sish/coffee-icon.webp"
-    },
-    "items": [
-      { "id": "st1", "name": "Chicken Chilly", "price": 169, "is_veg": false, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Spicy boneless chicken tossed with chillies.", "rating": 4.5, "tags": ["Starters", "Chicken"] },
-      { "id": "st2", "name": "Chicken Manchurian", "price": 159, "is_veg": false, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Indo-Chinese style chicken balls in sauce.", "rating": 4.2, "tags": ["Starters", "Chicken"] },
-      { "id": "st3", "name": "Chicken Schezwan", "price": 170, "is_veg": false, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Chicken tossed in spicy schezwan sauce.", "rating": 4.3, "tags": ["Starters", "Chicken"] },
-      { "id": "st4", "name": "Garlic Chicken", "price": 160, "is_veg": false, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Chicken cooked with fresh garlic flavors.", "rating": 4.4, "tags": ["Starters", "Chicken"] },
-      { "id": "st5", "name": "Chicken Lollipop (6 pcs)", "price": 180, "is_veg": false, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Crispy fried chicken drumsticks.", "rating": 4.8, "tags": ["Starters", "Chicken"] },
-      { "id": "st6", "name": "Veg Manchurian", "price": 100, "is_veg": true, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Vegetable balls in tangy sauce.", "rating": 4.0, "tags": ["Starters", "Veg"] },
-      { "id": "st7", "name": "Paneer Chilly", "price": 150, "is_veg": true, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Cottage cheese cubes with bell peppers.", "rating": 4.5, "tags": ["Starters", "Paneer"] },
-      { "id": "st8", "name": "Mushroom Chilly", "price": 120, "is_veg": true, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Fresh mushrooms tossed in chilly sauce.", "rating": 4.1, "tags": ["Starters", "Veg"] },
-      { "id": "st9", "name": "Honey Chilly Potato", "price": 140, "is_veg": true, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Crispy potatoes in honey chilli glaze.", "rating": 4.6, "tags": ["Starters", "Veg"] },
-      { "id": "st10", "name": "French Fries", "price": 70, "is_veg": true, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Classic salted french fries.", "rating": 4.4, "tags": ["Starters", "Veg"] },
-      { "id": "st11", "name": "Paneer Pakoda", "price": 99, "is_veg": true, "category": "Starters", "images": ["/sish/cafe.webp"], "description": "Fried cottage cheese fritters.", "rating": 4.2, "tags": ["Starters", "Paneer"] },
+    {
+      "id": 2,
+      "img": "/menu/offer2.webp",
+      "title1": "Spicy",
+      "title2": "Chicken Wings",
+      "desc": "Crispy and delicious",
+      "btnColor": "bg-red-600 text-white",
+      "code": "YUMMY",
+      "bg": "bg-yellow-500"
+    }
+  ],
+  "categories": ["All", "Starters", "Momo", "Noodles", "Fried Rice", "Curries", "Fast Food", "Soups", "Beverages"],
+  "category_images": {
+    "All": "/menu/all-icon.webp",
+    "Starters": "/menu/star-icon.webp",
+    "Momo": "/menu/star-icon.webp",
+    "Noodles": "/menu/wraps-icon.webp",
+    "Fried Rice": "/menu/wraps-icon.webp",
+    "Curries": "/menu/pizza-icon.webp",
+    "Fast Food": "/menu/pizza-icon.webp",
+    "Soups": "/menu/coffee-icon.webp",
+    "Beverages": "/menu/coffee-icon.webp"
+  },
+  "items": [
+    { "id": "st1", "name": "Chicken Chilly", "price": 169, "is_veg": false, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Spicy boneless chicken tossed with chillies.", "rating": 4.5, "tags": ["Starters", "Chicken"] },
+    { "id": "st2", "name": "Chicken Manchurian", "price": 159, "is_veg": false, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Indo-Chinese style chicken balls in sauce.", "rating": 4.2, "tags": ["Starters", "Chicken"] },
+    { "id": "st3", "name": "Chicken Schezwan", "price": 170, "is_veg": false, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Chicken tossed in spicy schezwan sauce.", "rating": 4.3, "tags": ["Starters", "Chicken"] },
+    { "id": "st4", "name": "Garlic Chicken", "price": 160, "is_veg": false, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Chicken cooked with fresh garlic flavors.", "rating": 4.4, "tags": ["Starters", "Chicken"] },
+    { "id": "st5", "name": "Chicken Lollipop (6 pcs)", "price": 180, "is_veg": false, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Crispy fried chicken drumsticks.", "rating": 4.8, "tags": ["Starters", "Chicken"] },
+    { "id": "st6", "name": "Veg Manchurian", "price": 100, "is_veg": true, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Vegetable balls in tangy sauce.", "rating": 4.0, "tags": ["Starters", "Veg"] },
+    { "id": "st7", "name": "Paneer Chilly", "price": 150, "is_veg": true, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Cottage cheese cubes with bell peppers.", "rating": 4.5, "tags": ["Starters", "Paneer"] },
+    { "id": "st8", "name": "Mushroom Chilly", "price": 120, "is_veg": true, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Fresh mushrooms tossed in chilly sauce.", "rating": 4.1, "tags": ["Starters", "Veg"] },
+    { "id": "st9", "name": "Honey Chilly Potato", "price": 140, "is_veg": true, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Crispy potatoes in honey chilli glaze.", "rating": 4.6, "tags": ["Starters", "Veg"] },
+    { "id": "st10", "name": "French Fries", "price": 70, "is_veg": true, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Classic salted french fries.", "rating": 4.4, "tags": ["Starters", "Veg"] },
+    { "id": "st11", "name": "Paneer Pakoda", "price": 99, "is_veg": true, "category": "Starters", "images": ["/menu/cafe.webp"], "description": "Fried cottage cheese fritters.", "rating": 4.2, "tags": ["Starters", "Paneer"] },
 
-      { "id": "mo1", "name": "Chicken Steam Momo", "price": 80, "is_veg": false, "category": "Momo", "images": ["/sish/cafe.webp"], "description": "Juicy steamed chicken dumplings.", "rating": 4.7, "tags": ["Momo", "Chicken"] },
-      { "id": "mo2", "name": "Veg Steam Momo", "price": 60, "is_veg": true, "category": "Momo", "images": ["/sish/cafe.webp"], "description": "Steamed vegetable dumplings.", "rating": 4.3, "tags": ["Momo", "Veg"] },
-      { "id": "mo3", "name": "Chicken Jhol Momo", "price": 120, "is_veg": false, "category": "Momo", "images": ["/sish/cafe.webp"], "description": "Momos served in traditional sesame soup.", "rating": 4.8, "tags": ["Momo", "Chicken"] },
-      { "id": "mo4", "name": "Veg Jhol Momo", "price": 90, "is_veg": true, "category": "Momo", "images": ["/sish/cafe.webp"], "description": "Veg momos in traditional soup.", "rating": 4.4, "tags": ["Momo", "Veg"] },
-      { "id": "mo5", "name": "Veg Shafale", "price": 60, "is_veg": true, "category": "Momo", "images": ["/sish/cafe.webp"], "description": "Tibetan fried bread stuffed with veg.", "rating": 4.2, "tags": ["Momo", "Veg"] },
-      { "id": "mo6", "name": "Chicken Shafale", "price": 80, "is_veg": false, "category": "Momo", "images": ["/sish/cafe.webp"], "description": "Tibetan fried bread stuffed with chicken.", "rating": 4.6, "tags": ["Momo", "Chicken"] },
+    { "id": "mo1", "name": "Chicken Steam Momo", "price": 80, "is_veg": false, "category": "Momo", "images": ["/menu/cafe.webp"], "description": "Juicy steamed chicken dumplings.", "rating": 4.7, "tags": ["Momo", "Chicken"] },
+    { "id": "mo2", "name": "Veg Steam Momo", "price": 60, "is_veg": true, "category": "Momo", "images": ["/menu/cafe.webp"], "description": "Steamed vegetable dumplings.", "rating": 4.3, "tags": ["Momo", "Veg"] },
+    { "id": "mo3", "name": "Chicken Jhol Momo", "price": 120, "is_veg": false, "category": "Momo", "images": ["/menu/cafe.webp"], "description": "Momos served in traditional sesame soup.", "rating": 4.8, "tags": ["Momo", "Chicken"] },
+    { "id": "mo4", "name": "Veg Jhol Momo", "price": 90, "is_veg": true, "category": "Momo", "images": ["/menu/cafe.webp"], "description": "Veg momos in traditional soup.", "rating": 4.4, "tags": ["Momo", "Veg"] },
+    { "id": "mo5", "name": "Veg Shafale", "price": 60, "is_veg": true, "category": "Momo", "images": ["/menu/cafe.webp"], "description": "Tibetan fried bread stuffed with veg.", "rating": 4.2, "tags": ["Momo", "Veg"] },
+    { "id": "mo6", "name": "Chicken Shafale", "price": 80, "is_veg": false, "category": "Momo", "images": ["/menu/cafe.webp"], "description": "Tibetan fried bread stuffed with chicken.", "rating": 4.6, "tags": ["Momo", "Chicken"] },
 
-      { "id": "nd1", "name": "Hakka Noodles", "price": 99, "is_veg": false, "category": "Noodles", "images": ["/sish/cafe.webp"], "description": "Classic stir-fried noodles.", "rating": 4.3, "tags": ["Noodles", "Chicken"] },
-      { "id": "nd2", "name": "Egg Noodles", "price": 90, "is_veg": false, "category": "Noodles", "images": ["/sish/cafe.webp"], "description": "Noodles stir-fried with eggs.", "rating": 4.4, "tags": ["Noodles", "Egg"] },
-      { "id": "nd3", "name": "Chicken Noodles", "price": 110, "is_veg": false, "category": "Noodles", "images": ["/sish/cafe.webp"], "description": "Noodles loaded with chicken chunks.", "rating": 4.5, "tags": ["Noodles", "Chicken"] },
-      { "id": "nd4", "name": "Veg Noodles", "price": 90, "is_veg": true, "category": "Noodles", "images": ["/sish/cafe.webp"], "description": "Noodles loaded with fresh vegetables.", "rating": 4.1, "tags": ["Noodles", "Veg"] },
-      { "id": "nd5", "name": "Paneer Noodles", "price": 120, "is_veg": true, "category": "Noodles", "images": ["/sish/cafe.webp"], "description": "Noodles tossed with paneer cubes.", "rating": 4.5, "tags": ["Noodles", "Paneer"] },
+    { "id": "nd1", "name": "Hakka Noodles", "price": 99, "is_veg": false, "category": "Noodles", "images": ["/menu/cafe.webp"], "description": "Classic stir-fried noodles.", "rating": 4.3, "tags": ["Noodles", "Chicken"] },
+    { "id": "nd2", "name": "Egg Noodles", "price": 90, "is_veg": false, "category": "Noodles", "images": ["/menu/cafe.webp"], "description": "Noodles stir-fried with eggs.", "rating": 4.4, "tags": ["Noodles", "Egg"] },
+    { "id": "nd3", "name": "Chicken Noodles", "price": 110, "is_veg": false, "category": "Noodles", "images": ["/menu/cafe.webp"], "description": "Noodles loaded with chicken chunks.", "rating": 4.5, "tags": ["Noodles", "Chicken"] },
+    { "id": "nd4", "name": "Veg Noodles", "price": 90, "is_veg": true, "category": "Noodles", "images": ["/menu/cafe.webp"], "description": "Noodles loaded with fresh vegetables.", "rating": 4.1, "tags": ["Noodles", "Veg"] },
+    { "id": "nd5", "name": "Paneer Noodles", "price": 120, "is_veg": true, "category": "Noodles", "images": ["/menu/cafe.webp"], "description": "Noodles tossed with paneer cubes.", "rating": 4.5, "tags": ["Noodles", "Paneer"] },
 
-      { "id": "fr1", "name": "Chicken Fried Rice", "price": 169, "is_veg": false, "category": "Fried Rice", "images": ["/sish/cafe.webp"], "description": "Wok-tossed rice with chicken.", "rating": 4.6, "tags": ["Fried Rice", "Chicken"] },
-      { "id": "fr2", "name": "Egg Fried Rice", "price": 100, "is_veg": false, "category": "Fried Rice", "images": ["/sish/cafe.webp"], "description": "Fried rice with scrambled eggs.", "rating": 4.3, "tags": ["Fried Rice", "Egg"] },
-      { "id": "fr3", "name": "Schezwan Chicken Fried Rice", "price": 150, "is_veg": false, "category": "Fried Rice", "images": ["/sish/cafe.webp"], "description": "Spicy schezwan style chicken rice.", "rating": 4.5, "tags": ["Fried Rice", "Chicken"] },
-      { "id": "fr4", "name": "Paneer Fried Rice", "price": 120, "is_veg": true, "category": "Fried Rice", "images": ["/sish/cafe.webp"], "description": "Fried rice with paneer cubes.", "rating": 4.4, "tags": ["Fried Rice", "Paneer"] },
-      { "id": "fr5", "name": "Veg Fried Rice", "price": 90, "is_veg": true, "category": "Fried Rice", "images": ["/sish/cafe.webp"], "description": "Classic vegetable fried rice.", "rating": 4.1, "tags": ["Fried Rice", "Veg"] },
+    { "id": "fr1", "name": "Chicken Fried Rice", "price": 169, "is_veg": false, "category": "Fried Rice", "images": ["/menu/cafe.webp"], "description": "Wok-tossed rice with chicken.", "rating": 4.6, "tags": ["Fried Rice", "Chicken"] },
+    { "id": "fr2", "name": "Egg Fried Rice", "price": 100, "is_veg": false, "category": "Fried Rice", "images": ["/menu/cafe.webp"], "description": "Fried rice with scrambled eggs.", "rating": 4.3, "tags": ["Fried Rice", "Egg"] },
+    { "id": "fr3", "name": "Schezwan Chicken Fried Rice", "price": 150, "is_veg": false, "category": "Fried Rice", "images": ["/menu/cafe.webp"], "description": "Spicy schezwan style chicken rice.", "rating": 4.5, "tags": ["Fried Rice", "Chicken"] },
+    { "id": "fr4", "name": "Paneer Fried Rice", "price": 120, "is_veg": true, "category": "Fried Rice", "images": ["/menu/cafe.webp"], "description": "Fried rice with paneer cubes.", "rating": 4.4, "tags": ["Fried Rice", "Paneer"] },
+    { "id": "fr5", "name": "Veg Fried Rice", "price": 90, "is_veg": true, "category": "Fried Rice", "images": ["/menu/cafe.webp"], "description": "Classic vegetable fried rice.", "rating": 4.1, "tags": ["Fried Rice", "Veg"] },
 
-      { "id": "cu1", "name": "Chicken Curry", "price": 160, "is_veg": false, "category": "Curries", "images": ["/sish/cafe.webp"], "description": "Traditional style chicken curry.", "rating": 4.4, "tags": ["Curries", "Chicken"] },
-      { "id": "cu2", "name": "Chicken Kadai", "price": 170, "is_veg": false, "category": "Curries", "images": ["/sish/cafe.webp"], "description": "Spicy chicken cooked with capsicum.", "rating": 4.5, "tags": ["Curries", "Chicken"] },
-      { "id": "cu3", "name": "Chicken Butter Masala", "price": 200, "is_veg": false, "category": "Curries", "images": ["/sish/cafe.webp"], "description": "Rich creamy chicken gravy.", "rating": 4.8, "tags": ["Curries", "Chicken"] },
-      { "id": "cu4", "name": "Mutton Curry", "price": 260, "is_veg": false, "category": "Curries", "images": ["/sish/cafe.webp"], "description": "Tender mutton cooked in spices.", "rating": 4.9, "tags": ["Curries", "Mutton"] },
-      { "id": "cu5", "name": "Matar Paneer", "price": 160, "is_veg": true, "category": "Curries", "images": ["/sish/cafe.webp"], "description": "Peas and paneer in tomato gravy.", "rating": 4.5, "tags": ["Curries", "Paneer"] },
-      { "id": "cu6", "name": "Mushroom Masala", "price": 160, "is_veg": true, "category": "Curries", "images": ["/sish/cafe.webp"], "description": "Spicy mushroom gravy.", "rating": 4.3, "tags": ["Curries", "Veg"] },
-      { "id": "cu7", "name": "Daal Fry", "price": 90, "is_veg": true, "category": "Curries", "images": ["/sish/cafe.webp"], "description": "Yellow lentil fry.", "rating": 4.2, "tags": ["Curries", "Veg"] },
+    { "id": "cu1", "name": "Chicken Curry", "price": 160, "is_veg": false, "category": "Curries", "images": ["/menu/cafe.webp"], "description": "Traditional style chicken curry.", "rating": 4.4, "tags": ["Curries", "Chicken"] },
+    { "id": "cu2", "name": "Chicken Kadai", "price": 170, "is_veg": false, "category": "Curries", "images": ["/menu/cafe.webp"], "description": "Spicy chicken cooked with capsicum.", "rating": 4.5, "tags": ["Curries", "Chicken"] },
+    { "id": "cu3", "name": "Chicken Butter Masala", "price": 200, "is_veg": false, "category": "Curries", "images": ["/menu/cafe.webp"], "description": "Rich creamy chicken gravy.", "rating": 4.8, "tags": ["Curries", "Chicken"] },
+    { "id": "cu4", "name": "Mutton Curry", "price": 260, "is_veg": false, "category": "Curries", "images": ["/menu/cafe.webp"], "description": "Tender mutton cooked in spices.", "rating": 4.9, "tags": ["Curries", "Mutton"] },
+    { "id": "cu5", "name": "Matar Paneer", "price": 160, "is_veg": true, "category": "Curries", "images": ["/menu/cafe.webp"], "description": "Peas and paneer in tomato gravy.", "rating": 4.5, "tags": ["Curries", "Paneer"] },
+    { "id": "cu6", "name": "Mushroom Masala", "price": 160, "is_veg": true, "category": "Curries", "images": ["/menu/cafe.webp"], "description": "Spicy mushroom gravy.", "rating": 4.3, "tags": ["Curries", "Veg"] },
+    { "id": "cu7", "name": "Daal Fry", "price": 90, "is_veg": true, "category": "Curries", "images": ["/menu/cafe.webp"], "description": "Yellow lentil fry.", "rating": 4.2, "tags": ["Curries", "Veg"] },
 
-      { "id": "ff1", "name": "Red Sauce Pasta Chicken", "price": 169, "is_veg": false, "category": "Fast Food", "images": ["/sish/cafe.webp"], "description": "Tangy red sauce pasta with chicken.", "rating": 4.4, "tags": ["Fast Food", "Chicken"] },
-      { "id": "ff2", "name": "Red Sauce Pasta Veg", "price": 149, "is_veg": true, "category": "Fast Food", "images": ["/sish/cafe.webp"], "description": "Tangy tomato pasta with veggies.", "rating": 4.2, "tags": ["Fast Food", "Veg"] },
-      { "id": "ff3", "name": "White Sauce Pasta Chicken", "price": 260, "is_veg": false, "category": "Fast Food", "images": ["/sish/cafe.webp"], "description": "Creamy cheesy pasta with chicken.", "rating": 4.7, "tags": ["Fast Food", "Chicken"] },
-      { "id": "ff4", "name": "Chicken Burger", "price": 109, "is_veg": false, "category": "Fast Food", "images": ["/sish/cafe.webp"], "description": "Juicy chicken patty burger.", "rating": 4.6, "tags": ["Fast Food", "Chicken"] },
-      { "id": "ff5", "name": "Veg Burger", "price": 79, "is_veg": true, "category": "Fast Food", "images": ["/sish/cafe.webp"], "description": "Crispy veg patty burger.", "rating": 4.3, "tags": ["Fast Food", "Veg"] },
-      { "id": "ff6", "name": "Egg Roll", "price": 70, "is_veg": false, "category": "Fast Food", "images": ["/sish/cafe.webp"], "description": "Classic Kolkata style egg roll.", "rating": 4.4, "tags": ["Fast Food", "Egg"] },
-      { "id": "ff7", "name": "Chicken Roll", "price": 100, "is_veg": false, "category": "Fast Food", "images": ["/sish/cafe.webp"], "description": "Roll stuffed with spicy chicken.", "rating": 4.7, "tags": ["Fast Food", "Chicken"] },
+    { "id": "ff1", "name": "Red Sauce Pasta Chicken", "price": 169, "is_veg": false, "category": "Fast Food", "images": ["/menu/cafe.webp"], "description": "Tangy red sauce pasta with chicken.", "rating": 4.4, "tags": ["Fast Food", "Chicken"] },
+    { "id": "ff2", "name": "Red Sauce Pasta Veg", "price": 149, "is_veg": true, "category": "Fast Food", "images": ["/menu/cafe.webp"], "description": "Tangy tomato pasta with veggies.", "rating": 4.2, "tags": ["Fast Food", "Veg"] },
+    { "id": "ff3", "name": "White Sauce Pasta Chicken", "price": 260, "is_veg": false, "category": "Fast Food", "images": ["/menu/cafe.webp"], "description": "Creamy cheesy pasta with chicken.", "rating": 4.7, "tags": ["Fast Food", "Chicken"] },
+    { "id": "ff4", "name": "Chicken Burger", "price": 109, "is_veg": false, "category": "Fast Food", "images": ["/menu/cafe.webp"], "description": "Juicy chicken patty burger.", "rating": 4.6, "tags": ["Fast Food", "Chicken"] },
+    { "id": "ff5", "name": "Veg Burger", "price": 79, "is_veg": true, "category": "Fast Food", "images": ["/menu/cafe.webp"], "description": "Crispy veg patty burger.", "rating": 4.3, "tags": ["Fast Food", "Veg"] },
+    { "id": "ff6", "name": "Egg Roll", "price": 70, "is_veg": false, "category": "Fast Food", "images": ["/menu/cafe.webp"], "description": "Classic Kolkata style egg roll.", "rating": 4.4, "tags": ["Fast Food", "Egg"] },
+    { "id": "ff7", "name": "Chicken Roll", "price": 100, "is_veg": false, "category": "Fast Food", "images": ["/menu/cafe.webp"], "description": "Roll stuffed with spicy chicken.", "rating": 4.7, "tags": ["Fast Food", "Chicken"] },
 
-      { "id": "sp1", "name": "Chicken Manchow Soup", "price": 100, "is_veg": false, "category": "Soups", "images": ["/sish/cafe.webp"], "description": "Spicy soup with chicken and crispy noodles.", "rating": 4.3, "tags": ["Soups", "Chicken"] },
-      { "id": "sp2", "name": "Veg Manchow Soup", "price": 70, "is_veg": true, "category": "Soups", "images": ["/sish/cafe.webp"], "description": "Spicy vegetable soup.", "rating": 4.1, "tags": ["Soups", "Veg"] },
+    { "id": "sp1", "name": "Chicken Manchow Soup", "price": 100, "is_veg": false, "category": "Soups", "images": ["/menu/cafe.webp"], "description": "Spicy soup with chicken and crispy noodles.", "rating": 4.3, "tags": ["Soups", "Chicken"] },
+    { "id": "sp2", "name": "Veg Manchow Soup", "price": 70, "is_veg": true, "category": "Soups", "images": ["/menu/cafe.webp"], "description": "Spicy vegetable soup.", "rating": 4.1, "tags": ["Soups", "Veg"] },
 
-      { "id": "bv1", "name": "Masala Tea", "price": 35, "is_veg": true, "category": "Beverages", "images": ["/sish/cafe.webp"], "description": "Spiced Indian chai.", "rating": 4.8, "tags": ["Beverages", "Tea"] },
-      { "id": "bv2", "name": "Hot Coffee", "price": 50, "is_veg": true, "category": "Beverages", "images": ["/sish/cafe.webp"], "description": "Classic hot coffee.", "rating": 4.5, "tags": ["Beverages", "Coffee"] }
-    ]
-  }
+    { "id": "bv1", "name": "Masala Tea", "price": 35, "is_veg": true, "category": "Beverages", "images": ["/menu/cafe.webp"], "description": "Spiced Indian chai.", "rating": 4.8, "tags": ["Beverages", "Tea"] },
+    { "id": "bv2", "name": "Hot Coffee", "price": 50, "is_veg": true, "category": "Beverages", "images": ["/menu/cafe.webp"], "description": "Classic hot coffee.", "rating": 4.5, "tags": ["Beverages", "Coffee"] }
+  ]
 }
